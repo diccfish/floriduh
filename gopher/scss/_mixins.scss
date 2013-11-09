@@ -1,0 +1,51 @@
+/*============================================
+  Vendor Prefixes
+=============================================*/
+@mixin vendor-prefix ($name, $argument) {
+  #{$name}: $argument;
+  -webkit-#{$name}: $argument;
+  -ms-#{$name}: $argument;
+  -moz-#{$name}: $argument;
+  -o-#{$name}: $argument;
+}
+
+$red: #ee6363;
+$lightGreen: #425626;
+$darkGreen: #212B13;
+
+$displayFont: 'Gruppo', sans-serif;
+
+@-webkit-keyframes hole {
+	from { 
+		background-color: $darkGreen;
+		background-image: -webkit-radial-gradient(center, ellipse cover, rgba(8,18,8,1) 0%, rgba(20,34,18,1) 45%, rgba(33,43,19,1) 80%);
+	}
+	to { 
+		background-color: #4f3e02;
+		background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEwMCUnPgoJPGRlZnM+CgkJPHBhdHRlcm4gcGF0dGVyblVuaXRzPSd1c2VyU3BhY2VPblVzZScgaWQ9J2MnIHdpZHRoPScxJyBoZWlnaHQ9JzInIHg9JzAnIHk9JzAnIHZpZXdCb3g9JzAgMCA1IDEwJz4KCQkJPGxpbmUgeDE9Jy0yJyB5MT0nMScgeDI9JzcnIHkyPScxMCcgc3Ryb2tlPScjNDIzMzAxJyBzdHJva2Utd2lkdGg9JzAuMjEnLz4KCQkJPGxpbmUgeDE9Jy0yJyB5MT0nNicgeDI9JzcnIHkyPScxNScgc3Ryb2tlPScjNDIzMzAxJyBzdHJva2Utd2lkdGg9JzAuMjEnLz4KCQkJPGxpbmUgeDE9Jy0yJyB5MT0nLTQnIHgyPSc3JyB5Mj0nNScgc3Ryb2tlPScjNDIzMzAxJyBzdHJva2Utd2lkdGg9JzAuMjEnLz4KCQk8L3BhdHRlcm4+CgkJPHJhZGlhbEdyYWRpZW50IGlkPSdnJyBncmFkaWVudFVuaXRzPSd1c2VyU3BhY2VPblVzZScgY3g9JzUwJScgY3k9JzUwJScgcj0nNzUlJyBmeD0nNDYlJyBmeT0nMjIlJz4KCQkJPHN0b3Agb2Zmc2V0PScwJScgc3RvcC1vcGFjaXR5PScuMicgc3RvcC1jb2xvcj0nIzRmM2UwMicgLz4KCQkJPHN0b3Agb2Zmc2V0PScxMDAlJyBzdG9wLWNvbG9yPScjMDgwNjAwJyAvPgoJCTwvcmFkaWFsR3JhZGllbnQ+Cgk8L2RlZnM+Cgk8cmVjdCB3aWR0aD0nMTAwJScgaGVpZ2h0PScxMDAlJyBmaWxsPSd1cmwoI2MpJy8+Cgk8cmVjdCB3aWR0aD0nMTIwJScgeD0nLTEwJScgeT0nLTEwJScgaGVpZ2h0PScxMjAlJyBmaWxsPSd1cmwoI2cpJy8+Cjwvc3ZnPg==');
+	}
+}
+
+@-webkit-keyframes holeimg {
+	0% { opacity: 0; }
+	50% { opacity: 0; }
+	100% { opacity: 100%; }
+}
+
+@-webkit-keyframes map-slide {
+	from { left: -40%; }
+	to { left: 0; }
+}
+@-moz-keyframes map-slide {
+	from { left: -40%; }
+	to { left: 0; }
+}
+@keyframes map-slide {
+	from { left: -40%; }
+	to { left: 0; }
+}
+
+@-webkit-keyframes zooming {
+	0% { left: -40%; }
+	to { left: 0; }
+}

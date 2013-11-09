@@ -1,0 +1,164 @@
+/*============================================
+  Animations
+=============================================*/
+@keyframes cloud {
+    0% { 
+        left: 103%;
+        top: 0;
+    }
+    25% {
+        top: 1em;
+    }
+    50% {
+        top: 0;
+    }
+    75% {
+        top: 1em;
+    }
+    100% {
+        left: -4em;
+        top: 0;
+    }
+}
+
+@-webkit-keyframes cloud {
+    0% { 
+        left: 103%;
+        top: 0;
+    }
+    25% {
+        top: 1em;
+    }
+    50% {
+        top: 0;
+    }
+    75% {
+        top: 1em;
+    }
+    100% {
+        left: -4em;
+        top: 0;
+    }
+}
+
+@keyframes roar {
+  0% {
+    bottom: 1.5em;
+    height: 0px;      
+  }
+  
+  50% {
+    bottom: 1.4em;
+    height: 5px;
+  }
+
+  100% {
+    bottom: 1.5em;
+    height: 0px;
+  }
+}
+
+@-webkit-keyframes roar {
+  0% {
+    bottom: 1.5em;
+    height: 0px;      
+  }
+  
+  50% {
+    bottom: 1.4em;
+    height: 8px;
+  }
+
+  100% {
+    bottom: 1.5em;
+    height: 0px;
+  }
+}
+
+@keyframes roarTeeth {
+  0% {
+    border-left: 1px solid #aaa;
+  }
+  
+  50% {
+    border-left: 1px solid rgba(#993333,0.5);
+    top: -.6em;
+  }
+
+  100% {
+    border-left: 1px solid #aaa;
+  }
+}
+
+@-webkit-keyframes roarTeeth {
+  0% {
+    border-left: 1px solid #aaa;
+  }
+  
+  50% {
+    border-left: 1px solid rgba(#993333,0.3);
+    top: -.6em;
+  }
+
+  100% {
+    border-left: 1px solid #aaa;
+  }
+}
+
+@keyframes roarFang {
+   0% {
+    bottom: 0;
+  }
+  
+  50% {
+    bottom: -.1em;
+  }
+
+  100% {
+    bottom: 0;
+  }
+}
+
+@-webkit-keyframes roarFang {
+  0% {
+    bottom: 0;
+  }
+  
+  50% {
+    bottom: -.1em;
+  }
+
+  100% {
+    bottom: 0;
+  }
+}
+
+@keyframes chomp {
+  0% {
+     transform: rotate(0);
+  }
+  70% {
+     transform: rotate(20deg);
+  }
+  90% {
+    transform: rotate(20deg); 
+  }
+  100% {
+     transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes chomp {
+  0% {
+     -webkit-transform: rotate(0);
+  }
+  70% {
+     -webkit-transform: rotate(20deg);
+  }
+  90% {
+    -webkit-transform: rotate(20deg); 
+  }
+  100% {
+     -webkit-transform: rotate(0deg);
+  }
+}

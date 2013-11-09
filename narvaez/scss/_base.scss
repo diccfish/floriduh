@@ -1,0 +1,213 @@
+h1 {
+	color: $primaryColor;
+	font-family: 'Gruppo', sans-serif;
+	font-size: 2em;
+	font-weight: 400;
+}
+
+h2 { 
+  @extend h1;
+  font-size: 1.5em;
+}
+
+article {
+	background: $tertiaryColor;
+  font-family: helvetica, sans-serif;
+}
+
+div {
+  color: #333;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.narvaez {
+	background-image: url(../img/narvaez.svg);
+	background-repeat: no-repeat;
+	background-size: cover;
+  background-position: 50%;
+  div {
+    background: rgba($tertiaryColor, 0.9);
+    padding: 0 10%;
+  }
+	h1 {
+		font-size: 3.5em;
+    padding: .25em 0 0;
+    text-shadow: 1px 1px #eee, 1px 1px 1px #333;
+	}
+  h2 {
+    font-size: 2.5em;
+    padding: 0 0 .5em;
+  }
+}
+
+.boca {
+  section {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+  .explain {
+    background: rgba($tertiaryColor, 0.75);
+    padding: 0 1em .25em;
+    position: relative;
+    z-index: 9;
+    h1 {
+      padding-top: .25em;
+    }
+  }
+  .land, .water {
+    position: absolute;
+    z-index: 0;
+  }
+  .land {
+    background: $brown;
+    left: 0;
+    height: 100%;
+    top: 0;
+    width: 100%;
+  }
+  .water {
+    background: $green;
+    border-radius: 50%;
+    height: 200%;
+    left: -50%;
+    top: -10%;
+    width: 120%;
+  }
+  .boat {
+    background: brown;
+    border-radius: .2em .2em 50% 50%;
+    position: absolute;
+    height: 4%;
+    width: 12%;
+    top: 50%;
+    left: 25%;
+    z-index: 1;
+  }
+  .sail {
+    background: #fff;
+    top: 45%;
+    left: 30%;
+    height: 2em;
+    width: 1%;
+    position: absolute;
+    z-index: 0;
+    &:after {
+      content: "";
+      top: -.5em;
+      right: -14px;
+      position: absolute;
+      border-left: 22px solid #fff;
+      border-top: 18px solid transparent;
+      border-bottom: 12px solid #fff;
+      z-index: 1;
+    }
+   }
+  .teepee {
+    border-bottom: 1.5em solid $green;
+    border-left: .85em solid transparent;
+    border-right: .85em solid transparent;
+    border-radius: 50%;
+    position: absolute;
+    right: 10%;
+    top: 40%;
+    width: 0;
+  }
+  .teepee2 {
+    @extend .teepee;
+    right: 15%;
+    top: 45%;
+  }
+  .teepee3 {
+    @extend .teepee;
+    right: 5%;
+    top: 45%;
+  }
+  .teepee4 {
+    @extend .teepee;
+    right: 10%;
+    top: 50%;
+  }
+}
+
+.tocobaga-container {
+  overflow: hidden;
+  div {
+    background: rgba($tertiaryColor, 0.75);
+    padding: 0 1em .25em;
+    position: relative;
+    z-index: 1;
+  }
+  .tocobaga {
+    border-radius: 50%;
+    border-top: 15em solid rgba($green,0.5);
+    border-bottom: 16em solid transparent;
+    border-left: 15em solid rgba($green,0.5);
+    border-right: 16em solid transparent;
+    position: absolute;
+    right: 25%;
+    top: 10%;
+    padding: 0;
+    width: 0;
+    z-index: 0;
+    @include vendor-prefix (transform, rotate(-45deg));
+  } 
+}
+
+.journey {
+  background: url(../img/expedition.png);
+  background-color: $tertiaryColor;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  div {
+    background: rgba($tertiaryColor, 0.85);
+    padding: 0 1em .25em;
+  }
+}
+
+iframe {
+  min-height: 70vh;
+  width: 100%;
+}
+
+.links {
+  a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+  }
+}
+
+.home {
+  text-align: center;
+  a {
+    text-decoration: none;
+  }
+  h1 {
+    background: $tertiaryColor / 1.5;
+    padding: 1em;
+  }
+}
+
+@media (min-width: 60em) {
+  h1 {
+    font-size: 3em;
+  }
+  h2 {
+    font-size: 2em;
+  }
+  div {
+    line-height: 1.75em;
+  }
+  .narvaez {
+    h1 {
+      font-size: 4.5em;
+    }
+    h2 {
+      font-size: 3.5em;
+    }
+  }
+}

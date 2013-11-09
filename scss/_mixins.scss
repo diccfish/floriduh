@@ -1,0 +1,86 @@
+/*============================================
+  Colors
+=============================================*/
+$offWhite: #eff9f4;
+$red: #ee6363;
+$forrestGreen: #425626;
+$darkGreen: #212B13;
+$mint: #d4faef;
+$aqua: #41bdc0;
+$orange: #efb946;
+$land: #395;
+$tree: #273;
+$trunk: #543;
+$sky: #baf5fa;
+$darkGrey: #333;
+$grey: #666;
+$brown: #aa8866;
+$pink: #ffcfdf;
+$teeth: #efefef;
+$titanis: #00a595;
+
+/*============================================
+  Fonts
+=============================================*/
+@font-face {
+    font-family: 'abrahamlincoln';
+    src: url('../fonts/abrahamlincoln-webfont.eot');
+    src: url('../fonts/abrahamlincoln-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/abrahamlincoln-webfont.woff') format('woff'),
+         url('../fonts/abrahamlincoln-webfont.svg') format('svg'), 
+         url('../fonts/abrahamlincoln-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$displayFont: 'Raleway', sans-serif;
+$titleFont: 'abrahamlincoln', serif;
+$baseFont: $displayFont;
+
+/*============================================
+  Vendor Prefixes
+=============================================*/
+@mixin vendor-prefix ($name, $argument) {
+    #{$name}: $argument;
+    -webkit-#{$name}: $argument;
+    -ms-#{$name}: $argument;
+    -moz-#{$name}: $argument;
+    -o-#{$name}: $argument;
+}
+
+/*============================================
+  leaves
+=============================================*/
+@mixin leaf {
+    background: $grey;
+    border-size: 1px;
+    border-color: $grey;
+    border-radius: 0 100%;
+    height: 2em;
+    position: absolute;
+    width: 2em;
+}
+
+/*============================================
+  Animation Axis Fix - CoDeveloped With Thom Griggs
+=============================================*/
+@mixin axis($width, $height, $color) {
+  left: $width * -1;
+  position: relative;
+  width: $width * 2;
+  &:before {
+    content: '';
+    position: absolute;
+    width: $width;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    width: $width;
+    border-bottom: $height solid $color;
+    border-radius: 0 0 4em 3em;
+    height: 1px;
+    left: $width;
+    top: -1px;
+  }
+}

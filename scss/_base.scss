@@ -1,0 +1,220 @@
+html {
+	color: $forrestGreen;
+	font-family: $baseFont;
+	font-weight: 300;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	@extend html;
+}
+
+:before, :after {
+  content: '';
+  display: block;
+  position: absolute;
+}
+
+.heading {
+	color: $red;
+	font-family: $displayFont;
+	font-weight: 300;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1 {
+	@extend .heading;
+	font-size: 1.5em;
+}
+
+h2, h3, h4 {
+	@extend .heading;
+	color: $forrestGreen;
+}
+
+a {
+	color: $darkGreen;
+	text-decoration: none;
+}
+
+strong {
+	color: $red;
+	font-size: 1.25em;
+	font-weight: normal;
+}
+
+section {
+	background: $sky;
+	font-size: 1em;
+	height: 100vh;
+	overflow: hidden;
+	position: relative;
+	
+	&> div {
+		display: block;
+		margin: 0 auto;
+		position: relative;
+		width: 90%;
+	}
+}
+
+.window{ 
+    width:100%;
+    height:100%;
+    position:absolute;
+}
+
+@for $i from 1 through 6 {
+    .window:nth-child(#{$i}){
+        top:($i - 1) * 100%;
+    }
+}
+
+.bg {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAXElEQVQYV2PceWefsbuK01kGKNjx4JAkiOmhYPccJgZSwwjjgGiQIpgCZDZIDq4QXQJdI1ghsiKQNSAxmHNgcozYFMGcg6yYeIVEW40cLMhBgtUz2BRjBA+xAQ4AfBRh/WdHfqsAAAAASUVORK5CYII=);
+}
+
+.intro {
+	@extend .bg;
+	color: #333;
+	font-family: $displayFont;
+	line-height: 1.5em;
+	text-align: center;
+	
+	h1 {
+		font-family: $titleFont;
+		font-size: 3em;
+		margin-bottom: .5rem;
+		text-shadow: 0 1px $mint, 0 2px #8acfcf;
+	}
+	
+	h2 {
+		color: $aqua / 1.1;
+		font-size: 1em;
+		margin: .5em 0 0;
+		text-shadow: 0 1px #fff;
+	}
+
+	h3 {
+		font-size: 1em;
+		margin: 0 0 5vh;
+		text-transform: uppercase;
+		text-shadow: 0 1px #fff;
+	}
+
+	h4 {
+		@extend h2;
+	}
+
+	i {
+		bottom: 1em;
+		font-size: 2em;
+		font-style: normal;
+		left: 0;
+		opacity: .8;
+		position: absolute;
+		width: 100%;
+		z-index: 1;
+		@include vendor-prefix (transform, rotate(90deg));
+		a {
+			color: $red;
+		}
+	}
+}
+
+.florida {
+	height: 250vh;
+	left: -80%;
+	pointer-events: none;
+	position: absolute;
+	top: -35%;
+	width: 250%;
+	z-index: 0;
+	.floridaFill {
+		fill: rgba($red,0.1);
+	}
+}
+
+.mail {
+	@extend .bg;
+    form {
+    	background: rgba($land, 0.5);
+    	padding: 1em;
+    	
+    	.input {
+    		background: rgba($sky, 0.5);
+    		border: none;
+    		color: $red;
+    		font-family: $baseFont;
+    		font-size: .8em;
+    	}
+    	
+    	input {
+    		@extend .input;
+    		padding: 2%;
+    		width: 39%;
+    		
+    		&:first-of-type {
+    			margin-right: 11%;
+    		}
+    	}
+    	
+    	textarea {
+    		@extend .input;
+    		margin: 1em 0 0;
+    		height: 5em;
+    		padding: 2%;
+    		width: 96%;
+    	}
+    	
+    	button {
+    		@extend .input;
+    		cursor: pointer;
+    		margin: 1em 0 0;
+    		padding: 1em 2em;
+    	}
+    }
+}
+
+.credits {
+	@extend .bg;
+    ul {
+    	li {
+    		margin: .5em 0;
+    	}
+    }
+}
+
+.quickfacts {
+	@extend .bg;
+	p {
+		background-image: url(../img/flamingo.svg);
+		background-repeat: no-repeat;
+		background-position: 0 50%;
+		background-size: 30px 30px;
+		color: $red;
+		font-size: 1em;
+		line-height: 30px;
+		padding: 0 30px 0 50px;
+	}
+}
+
+.allStories {
+	@extend .bg;
+	a {
+		color: $red;
+		display: block;
+		background-image: url(../img/orange.svg);
+		background-repeat: no-repeat;
+		background-position: 0 50%;
+		background-size: 30px 30px;
+		line-height: 30px;
+		margin-bottom: .5em;
+		padding: 0 0 0 50px;
+		text-decoration: none;
+		&:hover {
+			color: $orange;
+		}
+	}	
+}

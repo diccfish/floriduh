@@ -1,0 +1,570 @@
+#scene {
+    h1 {
+        left: 5%;
+        position: absolute;
+        top: 0;
+        z-index: 9;
+    }
+}
+
+div.scene {
+    height: 100%;
+    width: 100%;
+}
+
+.landscape {
+    background: $sky;
+    height: 70%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+}
+
+.land {
+    background: $land;
+    bottom: 0;
+    height: 30%;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+
+    &:before {
+        background: $land;    
+        border-radius: 50%;
+        top: -3%;
+        height: 6%;
+        left: 0;
+        width: 100%;
+    }
+}
+
+.land-wrap {
+    position: relative;
+    top: 70%;
+
+    #drag {
+        cursor: move;
+        height: 30%;
+        top: 0 !important;
+        width: 500%;
+        
+        &:after {
+            background: $red;
+            height: 5px;
+            top: 85%;
+            width: 100%;
+        }
+
+        &> a:nth-of-type(1n) {
+            bottom: 12em;
+            display: inline-block;
+            height: 12em;
+            padding: 0 4em;                
+            position: relative;
+            width: 10em;
+        }
+    }
+
+    i {
+        bottom: 1em;
+        color: $sky;
+        cursor: pointer;
+        font-size: 2em;
+        font-style: normal;
+        left: 1em;
+        opacity: .8;
+        position: fixed;
+        z-index: 1;
+
+        &:first-of-type {
+            @include vendor-prefix (transform, rotate(180deg));
+        }
+
+        &:last-of-type {
+            left: auto;
+            right: 1em;
+        }
+    }
+    
+    a {
+
+        &:before {
+            color: $land;
+            font-size: 1.375em;
+            left: 1.75em;
+            letter-spacing: 1px;
+            position: absolute;
+            text-align: center;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 3px #b9ebec;
+            width: 8em;
+            z-index: 9;
+        }
+    }
+
+    .gopherTortoise {
+        &:before {
+            content: 'Gopher Tortoise';
+        }
+        &:after {
+            background-image: url('../img/orange.svg');
+            background-repeat: no-repeat;
+            background-position: 50%;
+            height: 50px;
+            left: -10px;
+            opacity: .5;
+            top: -20px;
+            width: 8em;
+        }
+    }
+
+    .mangrove {
+        &:before {
+            content: 'Mangroves';
+        }
+        &:after {
+            @extend .gopherTortoise:after;
+        }
+    }
+
+    .narvaez {
+        &:before {
+            content: 'Panfilo de Narvaez';
+        }
+        &:after {
+            @extend .gopherTortoise:after;
+        }
+    }
+
+    .cougar {
+        &:before {
+            content: 'Florida Panhter';
+        }
+        &:after {
+            @extend .gopherTortoise:after;
+        }
+    }
+
+    .titanis {
+        &:before {
+            content: 'Titanis Walleri';
+        }
+        &:after {
+            @extend .gopherTortoise:after;
+        }
+    }
+}
+
+.cloud-wrap {
+    height: 10%;
+    margin: 5% 0;
+    position: relative;
+    width: 100%;
+
+    .cloud {
+        background: #fff;
+        border-radius: 0% 50% 50% 50%;
+        box-shadow: 1px 1px 3px #cadbec;
+        height: 3em;
+        right: -100%;
+        position: absolute;
+        top: 0;
+        width: 5em;
+        @include vendor-prefix (animation, cloud 35s linear infinite);
+        
+        &:before {
+            background: #fff;
+            border-radius: 50%;
+            content: '';
+            height: 2.5em;
+            position: absolute;
+            top: -1em;
+            left: -.5em;
+            width: 2.5em;
+        }
+
+        &:after {
+            @extend .cloud:before;
+            left: 1.75em;
+            top: -1.25em;
+        }
+    }
+
+    .cloudalt {
+        @extend .cloud;
+        height: 3em;
+        right: -100%;
+        margin-top: 3em;
+        width: 3em;
+        @include vendor-prefix (animation-delay, 12s);
+        
+        &:before {
+            left: -1.25em;
+            top: -1.5em;
+            height: 3em;
+            width: 3em;
+        }
+        
+        &:after {
+            @extend .cloudalt:before;
+            left: 1.25em;
+        }
+    }
+
+    &:nth-of-type(2) {
+        .cloud {
+            box-shadow: -1px 1px 3px #cadbec;
+            @include vendor-prefix (transform, rotateY(180deg));
+            @include vendor-prefix (animation, cloud 35s linear 20s infinite);
+        }
+
+        .cloudalt {
+            box-shadow: -1px 1px 3px #cadbec;
+            @include vendor-prefix (transform, rotateY(180deg));
+            @include vendor-prefix (animation, cloud 35s linear 28s infinite);
+        }
+    }
+}
+
+.tortoise {
+    background: rgba(45,119,35,1);
+    border-radius: 50% 50% 10% 10%;
+    bottom: 0;
+    box-shadow: -5px -7px rgba(15,69,10,1), 5px -7px rgba(15,69,10,1);
+    height: 2.25em;
+    left: 30%;
+    position: absolute;
+    width: 5em;
+    
+    &:before {
+        background: rgba(45,119,35,1);
+        border-radius: 0 0 25% 25%;
+        bottom: -2.5vh;
+        left: 0;
+        height: 3vh;
+        width: 1.5em;
+    }
+    
+    &:after {
+        @extend .tortoise:before;
+        left: 3.5em;
+    }
+    
+    .head {
+        background: rgba(53,134,44,1);
+        border-radius: 50%;
+        bottom: 22px;
+        height: 1.75em;
+        left: 1.65em;
+        position: absolute;
+        width: 1.75em;
+    }
+}
+
+.tree {
+    background: $trunk;
+    bottom: 0;
+	height: 4em;
+    left: 45%;
+	position: absolute;
+    width: 10px;
+
+    &:before {
+        background: $land;
+        border-radius: 100% 20% 100% 100%;
+        height: 5em;
+        left: -2.25em;
+        position: absolute;
+        top: -4.5em;
+        width: 5em;
+        @include vendor-prefix (transform, rotate(-45deg));
+    }
+
+    .leaf {
+        @include leaf;
+        background: $land;
+        border-color: $tree;
+        
+        &:first-of-type {
+            left: -2.75em;
+            top: -1.75em;
+        }
+        &:nth-of-type(2) {
+            right: -2.75em;
+            top: -1.75em;
+        }
+        &:nth-of-type(2n) {
+            @include vendor-prefix (transform, rotate(180deg));
+            border-radius: 100% 0;
+        }
+        &:nth-of-type(3) {
+            left: -3em;
+            top: -3em;
+        }
+        &:nth-of-type(4) {
+            right: -3em;
+            top: -3em;
+        }
+        &:nth-of-type(5) {
+            left: -3em;
+            top: -4.25em;
+        }
+        &:nth-of-type(6) {
+            right: -3em;
+            top: -4.25em;
+        }
+        &:nth-of-type(7) {
+            border-radius: 10% 100% 100% 10%;
+            left: -2em;
+            top: -5em;
+        }
+        &:nth-of-type(8) {
+            border-radius: 10% 100% 100% 10%;
+            right: -2em;
+            top: -5em;
+        }
+    }
+
+    .trunk {
+        border-style: solid;
+        border-width: 120px 5px 0 5px;
+        border-color: $trunk transparent transparent transparent;
+        height: 0;
+        margin-top: 4em;
+        width: 0;
+    }
+
+    .leftbranch {
+        border-style: solid;
+        border-width: 0 3px 120px 3px;
+        border-color: transparent transparent $trunk transparent;
+        height: 0;
+        margin-top: -5em;
+        margin-left: -50px;
+        position: absolute;
+        width: 0;
+        @include vendor-prefix (transform, rotate(230deg));
+
+        &:nth-of-type(3) {
+            border-width: 0 3px 60px 3px;
+            margin-left: -25px;
+            margin-top: -2.5em;
+        }
+    }
+
+    .rightbranch {
+        @extend .leftbranch;
+        border-width: 0 2px 70px 2px;
+        margin-top: -3em;
+        margin-left: 22px;
+        @include vendor-prefix (transform, rotate(136deg));
+        @include vendor-prefix (transition, all .5s linear);
+
+        &:nth-of-type(2) {
+            border-width: 0 2px 120px 2px;
+            margin-left: 40px;
+            margin-top: -5.25em;
+        }
+    }
+}
+
+.teepees {
+    bottom: 0;
+    left: 5%;
+    position: absolute;
+
+    .teepee {
+        bottom: -.5em;
+        border-bottom: 3em ridge $red;
+        border-left: 3em solid transparent;
+        border-right: 3em solid transparent;
+        border-top: 3em solid transparent;
+        border-radius: 40%;
+        left: 0;
+        position: absolute;
+    }
+
+    .teepee2 {
+        @extend .teepee;
+        bottom: -4em;
+        left: 4em;
+    }
+
+    .teepee3 {
+        @extend .teepee;
+        left: 8em;
+    }
+}
+
+.face {
+    background: $brown;
+    border-radius: 25% 25% 50% 50%;
+    box-shadow: 0 0 3px $grey;
+    height: 6em;
+    position: relative;
+    top: 9em;
+    width: 5.5em;
+
+    &:before {
+        background: $pink;
+        border: .75em solid $brown;
+        border-radius: 50% 50% 0 0;
+        box-shadow: 0 -1px 1px $grey;
+        content: '';
+        height: .875em;
+        left: 0;
+        position: absolute;
+        top: -1.5em;
+        width: .5em;
+        @include vendor-prefix (transform, rotate(-5deg));
+    }
+
+    &:after {
+      @extend .face:before;
+      left: auto;
+      right: 0;
+      @include vendor-prefix (transform, rotate(5deg));
+    }
+
+    .eye {
+        background: #fff;
+        border-radius: 1em 0;
+        height: 1em;
+        left: .75em;
+        position: absolute;
+        top: 1.5em;
+        width: 1.25em;
+        @include vendor-prefix (transform, rotate(45deg));
+      
+        &:nth-of-type(2) {
+            left: auto;
+            right: .75em;
+            @include vendor-prefix (transform, rotate(30deg));
+        }
+
+        &:before {
+          background: $darkGrey;
+          border-radius: 50%;
+          content: '';
+          height: .5em;
+          left: .5em;
+          position: absolute;
+          top: .35em;
+          width: .5em;
+        }
+    }
+}
+
+.mouth {
+    background: #efefef;
+    border-top: 2px solid $grey;
+    bottom: .5em;
+    border-radius: .5em .5em 2em 2em;
+    height: 2em;
+    left: 1em;
+    position: absolute;
+    width: 3.5em;
+    
+    &:before {
+      border-right: .5em solid transparent;
+      border-left: .5em solid transparent;
+      border-top: .5em solid $pink;
+      left: 1.25em;
+      border-radius: .25em;
+      height: 0;
+      content: '';
+      position: absolute;
+      top: -.65em;
+      width: 0;
+    }
+}
+
+.teeth {
+    background: #993333;
+    border-top: 1px solid #aaa;
+    bottom: 1.5em;
+    height: 0px;
+    left: 1.075em;
+    position: absolute;
+    width: 3.375em;
+    
+    &:before {
+      border-left: 1px solid #aaa;
+      content: '';
+      left: 1.075em;
+      height: 2em;
+      position: absolute;
+      top: -1em;
+    }
+    
+    &:after {
+      @extend .teeth:before;
+      left: auto;
+      right: 1.075em;
+    }
+}
+
+.fang {
+    background: #efefef;
+    bottom: 0;
+    border-radius: 0 0 0 1em;
+    box-shadow: -1px 2px 1px rgba(120,120,120,0.4);
+    left: 1.125em;
+    height: 1.5em;
+    position: absolute;
+    width: 1em;
+
+    &:nth-of-type(2n) {
+      border-radius: 0 0 1em 0;
+      box-shadow: 1px 2px 1px rgba(120,120,120,0.4);
+      left: auto;
+      right: 1.125em;
+    }
+}
+
+/*  ==================================
+    Titanis
+===================================*/
+
+.titanis {
+
+    .head {
+        background: $titanis;
+        border-bottom: .125em solid $titanis / 1.25;
+        border-radius: 3em 8em 0 0;
+        height: 3em;
+        position: relative;
+        top: 10em;
+        width: 8em;
+
+        &:before {
+            background: rgba(80,80,80,0.8);
+            border-radius: 50%;
+            height: 1.75em;
+            content: ''; 
+            left: .75em;
+            position: absolute;
+            top: .5em;
+            width: 2em;
+        }
+
+        &:after {
+            background: rgba(80,80,80,0.8);
+            border-radius: 50%;
+            content: '';
+            height: .5em;
+            position: absolute;
+            right: 2.5em;
+            top: .5em;
+            width: 1.25em;
+        }
+    }
+
+    .beak {
+        top: 10em;
+        @include axis(7.5em, 1.75em, $titanis);
+    }
+}

@@ -1,0 +1,26 @@
+$primaryColor: #00a595;
+$secondaryColor: #ee6363;
+$tertiaryColor: #f9d0bc;
+
+$green: #00d9c3;
+$brown: #a8410f;
+
+/*============================================
+  Vendor Prefixes
+=============================================*/
+@mixin vendor-prefix ($name, $argument) {
+  #{$name}: $argument;
+  -webkit-#{$name}: $argument;
+  -ms-#{$name}: $argument;
+  -moz-#{$name}: $argument;
+  -o-#{$name}: $argument;
+}
+
+@-webkit-keyframes threats {
+	0% { 
+		width: 0;
+	}
+	100% {
+		width: 10%;
+	}
+}

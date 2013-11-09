@@ -1,0 +1,41 @@
+$primaryColor: #00a595;
+$trunk: #543;
+$tree: #273;
+$bg: #aa8866;
+
+$baseFont: 'Raleway', sans-serif;
+
+/*============================================
+  Vendor Prefixes
+=============================================*/
+@mixin vendor-prefix ($name, $argument) {
+  #{$name}: $argument;
+  -webkit-#{$name}: $argument;
+  -ms-#{$name}: $argument;
+  -moz-#{$name}: $argument;
+  -o-#{$name}: $argument;
+}
+
+@keyframes drive {
+	0% {
+		@include vendor-prefix (transform, rotate(0deg));
+	}
+	50% {
+		@include vendor-prefix (transform, rotate(180deg));
+	}
+	100% {
+		@include vendor-prefix (transform, rotate(360deg));
+	}
+}
+
+@-webkit-keyframes drive {
+	0% {
+		@include vendor-prefix (transform, rotate(0deg));
+	}
+	50% {
+		@include vendor-prefix (transform, rotate(180deg));
+	}
+	100% {
+		@include vendor-prefix (transform, rotate(360deg));
+	}
+}

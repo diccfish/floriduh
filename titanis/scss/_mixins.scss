@@ -1,0 +1,71 @@
+$primaryColor: #00a595;
+$red: #ee6363;
+
+$baseFont: 'Raleway', sans-serif;
+$headerFont: 'Gruppo', sans-serif;
+
+/*============================================
+  Vendor Prefixes
+=============================================*/
+@mixin vendor-prefix ($name, $argument) {
+  #{$name}: $argument;
+  -webkit-#{$name}: $argument;
+  -ms-#{$name}: $argument;
+  -moz-#{$name}: $argument;
+  -o-#{$name}: $argument;
+}
+
+/*============================================
+  Animation Axis Fix - Credit: Thom Griggs
+=============================================*/
+@mixin axis($width, $height, $color) {
+  left: $width * -1;
+  position: relative;
+  width: $width * 2;
+  &:before {
+    content: '';
+    position: absolute;
+    width: $width;
+  }
+  &:after {
+    @extend :before;
+    border-bottom: $height solid $color;
+    border-radius: 0 0 4em 3em;
+    height: 1px;
+    left: $width;
+    top: -1px;
+  }
+}
+
+/*============================================
+  Animations
+=============================================*/
+@keyframes chomp {
+  0% {
+     transform: rotate(0);
+  }
+  70% {
+     transform: rotate(20deg);
+  }
+  90% {
+    transform: rotate(20deg); 
+  }
+  100% {
+     transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes chomp {
+  0% {
+     -webkit-transform: rotate(0);
+  }
+  70% {
+     -webkit-transform: rotate(20deg);
+  }
+  90% {
+    -webkit-transform: rotate(20deg); 
+  }
+  100% {
+     -webkit-transform: rotate(0deg);
+  }
+}

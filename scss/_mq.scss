@@ -1,0 +1,497 @@
+@media (min-width: 40em) {
+
+	.intro {
+		
+		h1 {
+			font-size: 3.5em;
+			margin-bottom: .25rem;
+		}
+
+		h3 {
+			margin: 0 0 10vh;
+		}
+
+		i {
+			font-size: 3em;
+		}
+	}
+
+	.land-wrap {
+
+	    #drag {
+	        width: 200%; 
+
+	        &:after {
+	        	top: 65%;
+	        }
+
+	        &> a:nth-of-type(1n) {
+	        	bottom: 45vh;
+	        	height: 45vh;
+	        }
+	    }
+
+	    a {
+
+	    	&:before {
+	    		left: -100%;
+	    	}
+
+	    	.tortoise {
+	    		background: $darkGrey;
+	    		box-shadow: -5px -7px rgba(0,0,0,1), 5px -7px rgba(0,0,0,1);
+	    		@include vendor-prefix (transition, all .5s linear);
+
+	    		&:before {
+        			background: $darkGrey;
+        			@include vendor-prefix (transition, background .5s linear);
+        		}
+
+        		.head {
+        			background: $darkGrey;
+        			@include vendor-prefix (transition, background .5s linear);
+        		}
+	    	}
+
+	    	.tree {
+	    		background: $darkGrey;
+	    		@include vendor-prefix (transition, background .5s linear);
+
+	            &:before {
+	                background: $grey;
+	                @include vendor-prefix (transition, background .5s linear);
+	            }
+
+	            .leaf {
+	            	background: $grey;
+	                border-color: $grey;
+	                @include vendor-prefix (transition, all .5s linear);
+	            }
+
+	            .trunk {
+	                border-color: $darkGrey transparent transparent transparent;
+	                @include vendor-prefix (transition, border-color .5s linear);
+	            }
+
+	            .leftbranch, .rightbranch {
+	                border-color: transparent transparent $darkGrey transparent;
+	                @include vendor-prefix (transition, border-color .5s linear);
+	            }
+	    	}
+
+	    	.teepees {
+	            .teepee, .teepee2, .teepee3 {
+	                border-bottom: 3em ridge $darkGrey;
+	                @include vendor-prefix (transition, border-bottom .5s linear);
+	            }
+	        }
+
+			.face {
+			    background: $grey;
+			    top: 16em;
+			    @include vendor-prefix (transition, background .5s linear);
+
+		    	&:before {
+		    		background: $grey;
+		    		border: .75em solid $grey;
+		    		@include vendor-prefix (transition, all .5s linear);
+		    	}
+			    
+			    &:after {
+			    	background: $grey;
+		    		border: .75em solid $grey;
+		    		@include vendor-prefix (transition, all .5s linear);
+			    }
+		    	
+		    	.eye {
+		       		background: $darkGrey;
+		       		@include vendor-prefix (transition, background .5s linear);
+
+		        	&:before {
+		          		background: $darkGrey;
+		          		@include vendor-prefix (transition, background .5s linear);
+		        	}
+		     	}
+			}
+
+			.mouth {
+		    	background: $grey;
+		    	@include vendor-prefix (transition, background .5s linear);
+		    	
+		    	&:before {
+		      		border-top: .5em solid $grey;
+		      		@include vendor-prefix (transition, border-top .5s linear);
+		    	}
+			}
+
+			.teeth {
+		    	background: $grey;
+	    	    border-top: 1px solid $grey;
+	    	    @include vendor-prefix (transition, all .5s linear);
+
+	    	    &:before, &:after {
+      				border-left: 1px solid $grey;
+      				@include vendor-prefix (transition, all .5s linear);
+      			}
+		  	}
+
+			.fang {
+		    	background: $grey;
+		    	@include vendor-prefix (transition, background .5s linear);
+		  	}
+
+		  	&.titanis {
+
+		  		.head {
+				    background: $grey;
+				    border-bottom: .125em solid $grey / 1.25;
+				    top: 15em;
+				    @include vendor-prefix (transition, all .5s linear);
+				}
+
+				.beak {
+					top: 15em;
+				    @include axis(7.5em, 1.75em, $grey);
+				    @include vendor-prefix (transition, all .5s linear);
+
+				    &:after {
+					    @include vendor-prefix (transition, all .5s linear);
+					}
+				}
+			}
+	    }
+
+	    a:hover {
+
+	        &:before {
+	            color: $land;
+	            font-size: 1.375em;
+	            left: 1.75em;
+	            letter-spacing: 1px;
+	            position: absolute;
+	            text-align: center;
+	            text-transform: uppercase;
+	            text-shadow: 1px 1px 3px #b9ebec;
+	            width: 8em;
+	            z-index: 9;
+	        }
+
+	        .tortoise {
+	            background: rgba(45,119,35,1);
+	            box-shadow: -5px -7px rgba(15,69,10,1), 5px -7px rgba(15,69,10,1);
+	            @include vendor-prefix (transition, all .5s linear);
+	            
+	            &:before {
+	                background: rgba(45,119,35,1);
+	            }
+	            
+	            .head {
+	                background: rgba(53,134,44,1);         
+	            }
+	        }
+
+	        .tree {
+	            background: $trunk;
+	            @include vendor-prefix (transition, background .5s linear);
+
+	            &:before {
+	                background: $land;
+	                @include vendor-prefix (transition, background .5s linear);
+	            }
+
+	            .leaf {
+	                background: $land;
+	                border-color: $tree;
+	                @include vendor-prefix (transition, background .5s linear);
+	            }
+
+	            .trunk {
+	                border-color: $trunk transparent transparent transparent;
+	                @include vendor-prefix (transition, border-color .5s linear);
+	            }
+
+	            .leftbranch, .rightbranch {
+	                border-color: transparent transparent $trunk transparent;
+	                @include vendor-prefix (transition, border-color .5s linear);
+	            }
+	        }
+
+	        .teepees {
+	            .teepee, .teepee2, .teepee3 {
+	                border-bottom: 3em ridge $red;
+	                @include vendor-prefix (transition, border-bottom .5s linear);
+	            }
+	        }
+	        	
+			.face {
+			    background: $brown;
+			    @include vendor-prefix (transition, background .5s linear);
+
+		    	&:before {
+		    		background: $pink;
+		    		border: .75em solid $brown;
+		    		@include vendor-prefix (transition, all .5s linear);
+		    	}
+
+			    &:after {
+			    	background: $pink;
+		    		border: .75em solid $brown;
+		    		@include vendor-prefix (transition, all .5s linear);
+			    }
+
+		    	.eye {
+		       		background: #fff;
+		       		@include vendor-prefix (transition, background .5s linear);
+
+		        	&:before {
+		          		background: #000;
+		          		@include vendor-prefix (transition, background .5s linear);
+		        	}
+		     	}
+			}
+
+			.mouth {
+		    	background: $teeth;
+		    	@include vendor-prefix (transition, background .5s linear);
+		    	
+		    	&:before {
+		      		border-top: .5em solid $pink;
+		      		@include vendor-prefix (transition, border-top .5s linear);
+		    	}
+			}
+
+			.teeth {
+		    	background: #993333;
+		    	border-top: 1px solid #aaa;
+		    	@include vendor-prefix (transition, all .5s linear);
+		    	@include vendor-prefix (animation, roar 1.25s 3);
+	    	    
+	    	    &:before, &:after {
+      				border-left: 1px solid #aaa;
+      				@include vendor-prefix (transition, all .5s linear);
+      				@include vendor-prefix (animation, roarTeeth 1.25s 3);
+      			}
+		  	}
+
+			.fang {
+		    	background: $teeth;
+		    	@include vendor-prefix (transition, background .5s linear);
+		    	@include vendor-prefix (animation, roarFang 1.25s 3);
+		  	}
+
+		  	&.titanis {
+
+		  		.head {
+				    background: $titanis;
+				    border-bottom: .125em solid $titanis / 1.25;
+				    @include vendor-prefix (transition, all .5s linear);
+				}
+
+				.beak {
+					@include vendor-prefix (animation, chomp .75s linear 2);
+				    @include axis(7.5em, 1.75em, $titanis);
+
+				    &:after {
+					    @include vendor-prefix (transition, all .5s linear);
+					}
+				}
+			}
+    	}
+
+    	.gopherTortoise {
+	        
+	        &:before {
+	            content: '';
+	        }
+	        
+	        &:after {
+	        	background: none;
+	        }
+
+	        &:hover {
+
+	            &:before {
+	                content: 'Gopher Tortoise';
+	            }
+
+	            &:after {
+	            	background-image: url('../img/orange.svg');
+		            background-repeat: no-repeat;
+		            background-position: 50%;
+		            height: 50px;
+		            left: -10px;
+		            opacity: .5;
+		            top: -20px;
+		            width: 8em;
+	            }
+	        }
+	    }
+
+	    .mangrove {
+
+	        &:before {
+	        	background: none;
+	            content: '';
+	        }
+
+	        &:after {
+	        	background: none;
+	        }
+
+	        &:hover {
+	            &:before {
+	                content: 'Mangroves';
+	            }
+
+	            &:after {
+	            	@extend .gopherTortoise:hover:after;
+	            }
+	        }
+	    }
+
+	    .narvaez {
+
+	        &:before {
+	            content: '';
+	        }
+
+	        &:after {
+	        	background: none;
+	        }
+
+	        &:hover {
+	            &:before {
+	                content: 'Panfilo de Narvaez';
+	            }
+
+	            &:after {
+	            	@extend .gopherTortoise:hover:after;
+	            }
+	        }
+    	}
+
+    	.cougar {
+
+	        &:before {
+	            content: '';
+	        }
+
+	        &:after {
+	        	background: none;
+	        }
+
+	        &:hover {
+	            &:before {
+	                content: 'Florida Panther';
+	            }
+
+	            &:after {
+	            	@extend .gopherTortoise:hover:after;
+	            }
+	        }
+    	}
+
+    	.titanis {
+
+	        &:before {
+	            content: '';
+	        }
+
+	        &:after {
+	        	background: none;
+	        }
+
+	        &:hover {
+	            &:before {
+	                content: 'Titanis Walleri';
+	            }
+
+	            &:after {
+	            	@extend .gopherTortoise:hover:after;
+	            }
+	        }
+    	}
+    }
+
+    .mail {
+    	form {
+    		input {
+    			width: 40%;
+    		}
+    	}
+    }
+
+    .quickfacts {
+    	p {
+    		background-size: 50px 50px;
+    		line-height: 50px;
+    	}
+    }
+}
+
+@media (min-width: 60em) {
+	
+	h1 {
+		font-size: 2em;
+	}
+
+	strong {
+		font-size: 1.5em;
+	}
+
+	section {
+		font-size: 1.25em;
+		
+		&> div {
+			width: 80%;
+		}
+	}
+
+	.intro {
+		
+		h1 {
+			font-size: 4.75em;
+		}
+		
+		h2 {
+			font-size: 1.5em;
+		}
+
+		h3 {
+			font-size: 1.25em;
+			margin: 0 0 22vh;
+		}
+	}
+
+	.land-wrap {
+		
+	    #drag {
+	        width: 200%;  
+	    }
+
+	    a {
+	    	.face {
+	    		left: 10%;
+			    top: 12em;
+			}
+
+			&.titanis {
+
+		  		.head {
+		  			top: 11em;
+		  		}
+
+		  		.beak {
+		  			top: 11em;
+		  		}
+		  	}
+
+	    }
+	}
+
+	.quickfacts, .mail, .credits, .allStories {
+    	div {
+    		width: 60%;
+    	}
+    }
+}
